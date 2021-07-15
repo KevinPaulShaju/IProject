@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import InputMaintenance from "./Pages/InputMaintenance";
+import PurchaseReq from "./Pages/PurchaseReq";
+import SupplierMaintenance from "./Pages/SupplierMaintenance";
+import SideNavigationBar from "./Components/UIElements/SideNavigationHeader/SideNavigationBar";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <SideNavigationBar></SideNavigationBar>
+      <Switch>
+        <Route path="/purchasereq">
+          <PurchaseReq></PurchaseReq>
+        </Route>
+        <Route exact path="/inputMaintenance">
+          <InputMaintenance></InputMaintenance>
+        </Route>
+        <Route exact path="/supplierMaintenance">
+          <SupplierMaintenance></SupplierMaintenance>
+        </Route>
+        <Redirect exact from="/" to="/purchasereq" />
+      </Switch>
+    </Router>
   );
 }
 

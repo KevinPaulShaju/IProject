@@ -1,0 +1,21 @@
+.buttons-container {
+  margin-top: 25px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.buttons {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .buttons-container {
+    margin-top: 10px;
+    display: block;
+    justify-content: center;
+  }
+}
